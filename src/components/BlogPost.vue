@@ -2,7 +2,8 @@
   <div class="blog-post col">
     <div>
       <!-- Link to Individual Blog when clicked -->
-      <router-link :to="{name:'BlogDetails', params: {id: blog.id}}" />
+      <router-link :to="{name:'BlogDetails', params: {id: blog.id}}">
+      </router-link>
     </div>
   </div>
 </template>
@@ -18,8 +19,7 @@ export default {
   },
   setup() {
     return {}
-  },
-  components: {}
+  }
 }
 </script>
 

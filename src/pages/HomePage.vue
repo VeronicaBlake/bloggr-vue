@@ -11,7 +11,7 @@
 <script>
 import { computed, onMounted, reactive } from 'vue'
 import { AppState } from '../AppState'
-import blogsService from '../services/BlogsService'
+import { blogsService } from '../services/BlogsService'
 import Notification from '../utils/Notification'
 
 export default {
@@ -22,7 +22,7 @@ export default {
     })
     onMounted(async() => {
       try {
-        await blogsService.getAll
+        await blogsService.getAll()
       } catch (error) {
         Notification.toast('Error: ' + error, 'error')
       }
