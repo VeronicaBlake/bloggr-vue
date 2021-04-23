@@ -17,12 +17,12 @@ const routes = [
     component: loadPage('AboutPage')
   },
   {
-    path: '/blog/:id',
+    path: '/blogs/:id',
     name: 'BlogDetails',
     component: loadPage('BlogDetailsPage')
   },
   {
-    path: '/profile/:id',
+    path: '/profiles/:id',
     name: 'Account',
     component: loadPage('AccountPage')
     // NOTE Prevents the page from loading if the user is not logged in

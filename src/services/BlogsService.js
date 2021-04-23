@@ -19,7 +19,8 @@ class BlogsService {
   }
 
   async getByProfileId(id) {
-
+    const res = await api.get(`api/blogs?creatorId=${id}`)
+    AppState.activeBlogs = res.data
   }
 
   async create(data) {
@@ -29,8 +30,12 @@ class BlogsService {
   }
 
   async addBlog(blogId, blog) {
-    await api.post(`api/blogs/${blogId}/blogs`, blog)
+    await api.post(`api/blogs/${blogId}`, blog)
     this.getActive(blogId)
+  }
+
+  async deleteBlog(blogId) {
+    await api.delete(`api/blog/${blogId}`)
   }
 }
 
